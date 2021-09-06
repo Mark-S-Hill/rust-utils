@@ -9,7 +9,13 @@ edition = "2018"
 chrono = "0.4"
 jwalk = "0.6.0"
 rayon = "1.5.1"
+fs_extra = "1.2.0"
+pretty-bytes = "0.2.2"
 
 [[bin]]
 name = "count_files"
 path = "src/count_files.rs"
+
+[[bin]]
+name = "dstats"
+path = "src/dstats.rs"
