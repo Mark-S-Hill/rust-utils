@@ -1,0 +1,14 @@
+[package]
+name = "nextflow_utils"
+authors = ["Mark-S-Hill"]
+description = "Nextflow Utilities"
+version = "0.0.1"
+edition = "2018"
+
+[dependencies]
+structopt = "0.3.23"
+regex = "1.5.4"
+
+[[bin]]
+name = "gpwd"
+path = "src/gpwd.rs"

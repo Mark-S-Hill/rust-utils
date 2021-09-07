@@ -1,6 +1,7 @@
 
 [workspace]
 members = [
-"core_utils"
+"core_utils",
+"nextflow_utils"
 ]
 
