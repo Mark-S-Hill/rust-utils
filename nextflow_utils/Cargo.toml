@@ -12,3 +12,7 @@ regex = "1.5.4"
 [[bin]]
 name = "gpwd"
 path = "src/gpwd.rs"
+
+[[bin]]
+name = "nferr"
+path = "src/nferr.rs"
