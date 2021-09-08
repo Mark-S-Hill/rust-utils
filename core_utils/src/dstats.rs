@@ -21,29 +21,25 @@ fn count_objects(obj: &str, path: &str, threads: usize) -> usize {
 
     if obj == "file" {    
         
-        file_dirs
-        .filter(|entry| entry.path().is_file())
-        .count()    
+        file_dirs.filter(|entry| entry.path().is_file()).count()    
     
     } else if obj == "directory" {
         
-        file_dirs
-        .filter(|entry| entry.path().is_dir())
-        .count()      
+        file_dirs.filter(|entry| entry.path().is_dir()).count()      
     
-    } else {
+     } else {
+         
         0
-    }    
+        
+       }    
 }
 
 fn main() {
-    let args = Cli::from_args();
-    let threads = args.threads;
-    let path = args.path;                  
     
-    let dir_size = get_size(&path).unwrap() as f64;    
-    let files = count_objects("file", &path, threads);
-    let sub_dirs = count_objects("directory", &path, threads); 
+    let args = Cli::from_args();    
+    let dir_size = get_size(&args.path).unwrap() as f64;    
+    let files = count_objects("file", &args.path, args.threads);
+    let sub_dirs = count_objects("directory", &args.path, args.threads); 
                                                               
     println!("Parent-directory: {}\tSub-directories: {}\tTotal-files: {}", 
              convert(dir_size),
