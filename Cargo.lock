@@ -86,6 +86,7 @@ dependencies = [
  "jwalk",
  "pretty-bytes",
  "rayon",
+ "structopt",
 ]
 
 [[package]]

@@ -1,9 +1,15 @@
-use std::env;
+use structopt::StructOpt;
 use fs_extra::dir::get_size;
 use pretty_bytes::converter::convert;
 use jwalk::{WalkDir, Parallelism};
 use rayon::prelude::*;
 use rayon::iter::ParallelBridge;
+
+#[derive(StructOpt)]
+struct Cli {
+    threads: usize,
+    path: String,
+}
 
 fn count_objects(obj: &str, path: &str, threads: usize) -> usize {
     
@@ -32,9 +38,9 @@ fn count_objects(obj: &str, path: &str, threads: usize) -> usize {
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let threads: usize = args[1].parse::<usize>().unwrap();
-    let path = args[2].to_string();                         
+    let args = Cli::from_args();
+    let threads = args.threads;
+    let path = args.path;                  
     
     let dir_size = get_size(&path).unwrap() as f64;    
     let files = count_objects("file", &path, threads);

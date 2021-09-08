@@ -1,12 +1,18 @@
+use structopt::StructOpt;
 use jwalk::{WalkDir, Parallelism};
-use std::env;
 use chrono::offset::Utc;
 use rayon::prelude::*;
 
+#[derive(StructOpt)]
+struct Cli {
+    threads: usize,
+    path: String,
+}
+
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let threads: usize = args[1].parse::<usize>().unwrap();
-    let path = args[2].to_string();
+    let args = Cli::from_args();
+    let threads = args.threads;
+    let path = args.path;
      
     let file_count = WalkDir::new(&path)
                      .parallelism(Parallelism::RayonNewPool(threads))
