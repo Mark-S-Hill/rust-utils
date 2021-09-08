@@ -16,7 +16,7 @@ fn main() {
     let re = Regex::new(r"[a-z0-9]{2}/[a-z0-9]{6}").unwrap();    
     let cached = "Cached process";
     let submitted = "Submitted process";
-    let complete = "Task completed";
+    //let complete = "Task completed";
             
     for line in content.lines() {
         if line.contains(&args.pattern) && 
@@ -40,15 +40,16 @@ fn main() {
                             line.split(" ").nth(12).unwrap(),
                             line.split(" ").nth(13).unwrap())
                             
-               } else if line.contains(complete) {
+               } /* else if line.contains(complete) {
                    
                    println!("Workdir: {}\t{} {}: {} {}", 
                             line.split(" ").nth(24).unwrap(),
                             line.split(" ").nth(7).unwrap(),
                             line.split(" ").nth(8).unwrap(),
                             line.split(" ").nth(15).unwrap(),
-                            line.split(" ").nth(16).unwrap())      
-               }    
+                            line.split(" ").nth(16).unwrap()) 
+                     
+               } */   
         }
     }
 }
