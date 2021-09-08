@@ -20,36 +20,36 @@ fn main() {
             
     for line in content.lines() {
         if line.contains(&args.pattern) && 
-           re.is_match(line) {
+            re.is_match(line) {
                
-               if line.contains(cached){
+                if line.contains(cached){
                    
-                   println!("WorkDir: {}\t{} {}: {} {}", 
+                    println!("WorkDir: {}\t{} {}: {} {}", 
                             line.split(" ").nth(9).unwrap(),
                             line.split(" ").nth(10).unwrap(),
                             line.split(" ").nth(11).unwrap(),
                             line.split(" ").nth(13).unwrap(),
                             line.split(" ").nth(14).unwrap())
                             
-               } else if line.contains(submitted){
+                } else if line.contains(submitted){
                    
-                   println!("WorkDir: {}\t{} {}: {} {}", 
+                    println!("WorkDir: {}\t{} {}: {} {}", 
                             line.split(" ").nth(8).unwrap(),
                             line.split(" ").nth(9).unwrap(),
                             line.split(" ").nth(10).unwrap(),
                             line.split(" ").nth(12).unwrap(),
                             line.split(" ").nth(13).unwrap())
                             
-               } /* else if line.contains(complete) {
+                } /* else if line.contains(complete) {
                    
-                   println!("Workdir: {}\t{} {}: {} {}", 
+                    println!("Workdir: {}\t{} {}: {} {}", 
                             line.split(" ").nth(24).unwrap(),
                             line.split(" ").nth(7).unwrap(),
                             line.split(" ").nth(8).unwrap(),
                             line.split(" ").nth(15).unwrap(),
                             line.split(" ").nth(16).unwrap()) 
                      
-               } */   
+                } */   
         }
     }
 }

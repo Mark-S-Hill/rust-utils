@@ -14,10 +14,10 @@ struct Cli {
 fn count_objects(obj: &str, path: &str, threads: usize) -> usize {
     
     let file_dirs = WalkDir::new(path)
-                    .parallelism(Parallelism::RayonNewPool(threads))
-                    .into_iter()
-                    .par_bridge()
-                    .filter_map(Result::ok);
+        .parallelism(Parallelism::RayonNewPool(threads))
+        .into_iter()
+        .par_bridge()
+        .filter_map(Result::ok);
 
     if obj == "file" {    
         
@@ -33,8 +33,7 @@ fn count_objects(obj: &str, path: &str, threads: usize) -> usize {
     
     } else {
         0
-    }
-    
+    }    
 }
 
 fn main() {

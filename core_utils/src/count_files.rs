@@ -15,12 +15,12 @@ fn main() {
     let path = args.path;
      
     let file_count = WalkDir::new(&path)
-                     .parallelism(Parallelism::RayonNewPool(threads))
-                     .into_iter()
-                     .par_bridge()
-                     .filter_map(Result::ok)
-                     .filter(|entry| entry.path().is_file())
-                     .count();
+        .parallelism(Parallelism::RayonNewPool(threads))
+        .into_iter()
+        .par_bridge()
+        .filter_map(Result::ok)
+        .filter(|entry| entry.path().is_file())
+        .count();
     
     println!("{}\t{:?}\t{}", path, Utc::now(), file_count);
 }
