@@ -8,6 +8,7 @@ edition = "2018"
 [dependencies]
 structopt = "0.3.23"
 regex = "1.5.4"
+git2 = "0.13.23"
 
 [[bin]]
 name = "gpwd"
@@ -16,3 +17,7 @@ path = "src/gpwd.rs"
 [[bin]]
 name = "nferr"
 path = "src/nferr.rs"
+
+[[bin]]
+name = "nfinit"
+path = "src/nfinit.rs"

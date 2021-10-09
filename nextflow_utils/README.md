@@ -15,3 +15,11 @@ nferr </path/to/.nextflow.log>
 Returns:
 process_name  exit_status workDir
 ```
+
+* `src/nfinit` - creates a new git repository with a generic Nextflow pipeline structure.
+```Rust
+Usage:
+nfinit <Project_Name>
+Returns:
+git repo called <Project_Name>
+```
