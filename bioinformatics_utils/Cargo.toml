@@ -1,0 +1,15 @@
+[package]
+name = "bioinformatics_utils"
+authors = ["Mark-S-Hill"]
+description = "Bioinformatics Utilities"
+version = "0.0.1"
+edition = "2018"
+
+[dependencies]
+regex = "1.5.4"
+rand = "0.8"
+structopt = "0.3.23"
+
+[[bin]]
+name = "barcode_files"
+path = "src/barcode_files.rs"

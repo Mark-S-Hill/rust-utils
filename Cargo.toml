@@ -2,6 +2,7 @@
 [workspace]
 members = [
 "core_utils",
-"nextflow_utils"
+"nextflow_utils",
+"bioinformatics_utils"
 ]
 
