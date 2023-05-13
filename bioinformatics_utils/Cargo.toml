@@ -11,5 +11,5 @@ rand = "0.8"
 structopt = "0.3.23"
 
 [[bin]]
-name = "barcode_files"
-path = "src/barcode_files.rs"
+name = "barcode_cells"
+path = "src/barcode_cells.rs"
