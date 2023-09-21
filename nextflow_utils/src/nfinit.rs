@@ -15,19 +15,19 @@ fn setup_project(project_name: &String) -> std::io::Result<()> {
     for subdir in subdirs.iter(){
         fs::create_dir(format!("{}{}", project_name, subdir))?;
     }
-    
+
     let files = vec!["/main.nf", "/nextflow.config", "/conf/base.conf", "/.gitignore"]; 
     for file in files.iter(){
         fs::File::create(format!("{}{}", project_name, file))?;
     }
-                       
-    Ok(())        
+
+    Ok(())
 }
 
 fn main() {
     let args = Cli::from_args();
-    setup_project(&args.project_name);     
-    
+    let _ = setup_project(&args.project_name);     
+
     let _repo = match Repository::init(format!("{}{}", "./", &args.project_name)) {
         Ok(repo) => repo,
         Err(e) => panic!("failed to init: {}", e),

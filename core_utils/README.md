@@ -15,5 +15,8 @@ Returns:
 directory_size  number_of_subdirs file_count 
 ```
 
-
-
+* `src/dsinit` - a data science project initialiser.
+```Rust
+Usage:
+dsinit <project_name> <author>
+```
